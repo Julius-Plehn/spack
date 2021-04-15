@@ -42,9 +42,6 @@ class Openvdb(CMakePackage):
 
     def cmake_args(self):
         args = [
-            self.define('PYTHON_LIBRARY', self.spec['python'].libs[0]),
-            self.define('PYTHON_EXECUTABLE', self.spec['python'].command),
-            self.define('PYTHON_INCLUDE', self.spec['python'].headers.directories[0]),
             self.define('OPENVDB_BUILD_CORE', True),
             self.define_from_variant('OPENVDB_BUILD_VDB_PRINT', 'print'),
             self.define_from_variant('OPENVDB_BUILD_VDB_LOD', 'lod'),
